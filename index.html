@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Meteor Vector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Clean professional font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+<body>
+    <div class="game-wrapper">
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="hud">
+            <div class="brand">
+                <div class="logo-main">METEOR<span>VECTOR</span></div>
+                <div class="logo-sub">Orbital Defense Systems</div>
+            </div>
+
+            <div class="hud-right">
+                <div class="hud-pill">
+                    Score
+                    <span id="score">0</span>
+                </div>
+                <div class="hud-pill">
+                    Best
+                    <span id="bestScore">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="panel panel-intro">
+                <div class="panel-header">
+                    <h1>METEOR VECTOR</h1>
+                    <p>Planetary Perimeter Defense Simulation</p>
+                </div>
+
+                <div class="panel-content">
+                    <div class="grid">
+                        <div class="grid-item">
+                            <h2>Controls</h2>
+                            <p>W / A / S / D – ship movement</p>
+                            <p>Mouse – aim</p>
+                            <p>Left click or SPACE – fire</p>
+                        </div>
+                        <div class="grid-item">
+                            <h2>Meteors</h2>
+                            <p>Small – 1 hit</p>
+                            <p>Medium – 2 hits</p>
+                            <p>Large – 3 hits</p>
+                        </div>
+                    </div>
+
+                    <p class="hint">
+                        Survive as long as possible. Meteors will become more frequent and faster.  
+                        Precision and movement are your only shield.
+                    </p>
+                </div>
+
+                <div class="panel-footer">
+                    <button id="startBtn">Start Simulation</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay overlay-hidden" id="gameOver">
+            <div class="panel panel-gameover">
+                <div class="panel-header">
+                    <h2>SIMULATION TERMINATED</h2>
+                    <p>The orbital shield has been breached.</p>
+                </div>
+
+                <div class="panel-content center">
+                    <div class="result-row">
+                        <span>Score</span>
+                        <span id="finalScore">0</span>
+                    </div>
+                    <div class="result-row">
+                        <span>Best Score</span>
+                        <span id="finalBestScore">0</span>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <button id="restartBtn">Start New Simulation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
